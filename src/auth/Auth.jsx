@@ -4,7 +4,7 @@ import "./auth.css"
 function Auth() {
   const [mode, setMode] = useState("login");
   const [form, setForm] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -20,7 +20,7 @@ function Auth() {
       mode === "register"
         ? {
             action: "register",
-            username: form.username,
+            name: form.name,
             email: form.email,
             password: form.password,
           }
@@ -51,7 +51,7 @@ function Auth() {
       }
 
       alert(data.message);
-      setForm({ username: "", email: "", password: "" });
+      setForm({ name: "", email: "", password: "" });
 
       if (mode === "login") {
         window.location.href="/dashboard";
@@ -75,7 +75,7 @@ function Auth() {
         <input
           name="username"
           placeholder="Username"
-          value={form.username}
+          value={form.name}
           onChange={handleChange}
           required
         />

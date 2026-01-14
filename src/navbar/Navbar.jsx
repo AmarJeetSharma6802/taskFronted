@@ -12,10 +12,9 @@ function Navbar() {
     const fetchUser = async () => {
       try {
         // const res = await fetch("http://localhost:3000/api/user", {
-       fetch("https://backend-task-28rk.onrender.com/api/user", {
-  credentials: "include",
-});
-
+        fetch("https://backend-task-28rk.onrender.com/api/user", {
+          credentials: "include",
+        });
 
         const data = await res.json();
 
@@ -51,12 +50,9 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-container">
-        
         <div className="logo">
           <div className="logo-box">⌘</div>
-          <span className="logo-text">
-            Dev.
-          </span>
+          <span className="logo-text">Dev.</span>
         </div>
 
         <nav className="nav-links">
@@ -66,12 +62,9 @@ function Navbar() {
           <a href="#contact">Contact</a>
         </nav>
 
-          {user && (
+        {user && (
           <div className="avatar-wrapper" ref={menuRef}>
-            <div
-              className="avatar"
-              onClick={() => setOpen(!open)}
-            >
+            <div className="avatar" onClick={() => setOpen(!open)}>
               {firstChar}
             </div>
 
@@ -82,7 +75,6 @@ function Navbar() {
             )}
           </div>
         )}
-
       </div>
     </header>
   );

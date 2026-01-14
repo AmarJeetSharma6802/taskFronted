@@ -13,6 +13,7 @@ function Navbar() {
       try {
         // const res = await fetch("http://localhost:3000/api/user", {
         fetch("https://backend-task-28rk.onrender.com/api/user", {
+           method: "GET",
           credentials: "include",
         });
 

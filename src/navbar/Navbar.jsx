@@ -11,9 +11,11 @@ function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("https://backend-task-28rk.onrender.com/api/user", {
-          credentials: "include",
-        });
+        // const res = await fetch("http://localhost:3000/api/user", {
+       fetch("https://backend-task-28rk.onrender.com/api/user", {
+  credentials: "include",
+});
+
 
         const data = await res.json();
 

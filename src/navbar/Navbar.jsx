@@ -11,7 +11,7 @@ function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("https://real-from-data-server.onrender.com/api/get-data", {
+        const res = await fetch("https://backend-task-28rk.onrender.com/api/user", {
           credentials: "include",
         });
 
@@ -34,7 +34,7 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      await fetch("https://real-from-data-server.onrender.com/api/logout", {
+      await fetch("https://backend-task-28rk.onrender.com/api/logout", {
         method: "POST",
         credentials: "include",
       });

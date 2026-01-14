@@ -31,7 +31,7 @@ function Auth() {
           };
 
     try {
-      const res = await fetch("https://real-from-data-server.onrender.com/api/auth", {
+      const res = await fetch("https://backend-task-28rk.onrender.com/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

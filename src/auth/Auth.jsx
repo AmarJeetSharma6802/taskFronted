@@ -73,7 +73,7 @@ function Auth() {
     <form onSubmit={handleSubmit}>
       {mode === "register" && (
         <input
-          name="username"
+          name="name"
           placeholder="name"
           value={form.name}
           onChange={handleChange}

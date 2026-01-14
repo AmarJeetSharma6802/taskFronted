@@ -74,7 +74,7 @@ function Auth() {
       {mode === "register" && (
         <input
           name="username"
-          placeholder="Username"
+          placeholder="name"
           value={form.name}
           onChange={handleChange}
           required

@@ -44,7 +44,7 @@ function Navbar() {
     }
   };
 
-  const firstChar = user?.username?.charAt(0)?.toUpperCase();
+  const firstChar = user?.name?.charAt(0)?.toUpperCase();
 
   return (
     <header className="navbar">

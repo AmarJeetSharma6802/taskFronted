@@ -9,29 +9,35 @@ function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        // const res = await fetch("http://localhost:3000/api/user", {
-     const res=    fetch("https://backend-task-28rk.onrender.com/api/user", {
+  const fetchUser = async () => {
+    try {
+      const res = await fetch(
+        "https://backend-task-28rk.onrender.com/api/user",
+        {
+          method: "GET",
           credentials: "include",
-        });
-
-        const data = await res.json();
-
-        if (res.ok && data.user) {
-          setUser(data.user);
-        } else {
-          setUser(null);
         }
-      } catch {
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
+      );
 
-    fetchUser();
-  }, []);
+      const data = await res.json();
+
+      console.log("USER RESPONSE:", res.status, data);
+
+      if (res.ok) {
+        setUser(data.user);
+      } else {
+        setUser(null);
+      }
+    } catch (err) {
+      console.error("FETCH ERROR:", err);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchUser();
+}, []);
 
   const handleLogout = async () => {
     try {

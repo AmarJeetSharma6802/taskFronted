@@ -18,16 +18,13 @@ function Navbar() {
           return;
         }
 
-        const res = await fetch(
-          "https://backend-task-28rk.onrender.com/api/user",
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const res = await fetch(`${process.env.REACT_APP_URL}/api/user`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
 
         const data = await res.json();
         // console.log("USER RESPONSE:", res.status, data);
@@ -84,10 +81,7 @@ function Navbar() {
 
         {!loading && user && (
           <div className="avatar-wrapper" ref={menuRef}>
-            <div
-              className="avatar"
-              onClick={() => setOpen((prev) => !prev)}
-            >
+            <div className="avatar" onClick={() => setOpen((prev) => !prev)}>
               {firstChar}
             </div>
 

@@ -9,7 +9,6 @@ function About() {
         <h2 className="section-title">About Me</h2>
 
         <div className="about-bento">
-          {/* MAIN CARD */}
           <div className="about-main glass-card">
             <h3>Product-minded Engineer</h3>
             <p>
@@ -19,7 +18,6 @@ function About() {
             </p>
           </div>
 
-          {/* SIDE CARDS */}
           <div className="about-side">
             <div className="about-mini glass-card">
               <strong>Developer</strong>

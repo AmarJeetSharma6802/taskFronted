@@ -70,7 +70,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-container">
-        <div className="logo">
+        <div className="logo" id="home">
           <div className="logo-box">⌘</div>
           <span className="logo-text">Dev.</span>
         </div>

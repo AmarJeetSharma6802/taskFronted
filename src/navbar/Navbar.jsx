@@ -19,7 +19,7 @@ function Navbar() {
         }
 
         const res = await fetch(
-          "https://backend-task-28rk.onrender.com",
+          "https://backend-task-28rk.onrender.com/api/user",
           {
             method: "GET",
             headers: {

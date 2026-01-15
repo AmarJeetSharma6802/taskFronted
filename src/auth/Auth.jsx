@@ -54,6 +54,7 @@ function Auth() {
       setForm({ name: "", email: "", password: "" });
 
       if (mode === "login") {
+         localStorage.setItem("token", data.accessToken);
         window.location.href="/dashboard";
       } else {
         setMode("login");

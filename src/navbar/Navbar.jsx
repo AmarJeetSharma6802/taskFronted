@@ -26,8 +26,13 @@ function Navbar() {
           },
         });
 
-        const data = await res.json();
+        // const data = await res.json();
         // console.log("USER RESPONSE:", res.status, data);
+
+        const text = await res.text();
+      // console.log("RAW RESPONSE:", text);
+
+      const data = JSON.parse(text);
 
         if (res.ok && data.user) {
           setUser(data.user);

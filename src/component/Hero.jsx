@@ -18,8 +18,11 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <button className="primary-btn">View Work</button>
-          <button className="secondary-btn">Read About Me</button>
+          <button className="primary-btn">
+            <a href="https://portfolio-beta-dusky-34.vercel.app/#projects">View Work</a>
+          </button>
+          <button className="secondary-btn"><a href="">
+            https://portfolio-beta-dusky-34.vercel.app/#about</a>Read About Me</button>
         </div>
       </div>
     </section>

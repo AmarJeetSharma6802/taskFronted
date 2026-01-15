@@ -18,7 +18,8 @@ export default function Work() {
             </div>
 
             <button className="project-btn">
-              View Case Study →
+              <a href="https://portfolio-beta-dusky-34.vercel.app/#projects">View Case Study →</a>
+              
             </button>
           </div>
         </div>

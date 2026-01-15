@@ -467,3 +467,10 @@ body {
   color: var(--primary);
   border-color: var(--primary);
 }
+
+
+@media (max-width:450px) {
+  .nav-links{
+display: none;
+  }
+}

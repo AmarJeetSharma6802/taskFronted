@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -23,14 +23,13 @@ function Navbar() {
           {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${token}`, // ✅ hybrid fallback
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
             },
-            credentials: "include", // ✅ cookie if browser allows
           }
         );
 
         const data = await res.json();
-
         console.log("USER RESPONSE:", res.status, data);
 
         if (res.ok && data.user) {
@@ -56,7 +55,6 @@ function Navbar() {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        credentials: "include",
       });
     } catch (err) {
       console.error("Logout error:", err);

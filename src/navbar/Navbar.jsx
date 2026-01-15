@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -9,57 +9,43 @@ function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const token = localStorage.getItem("token");
-
-        if (!token) {
-          setLoading(false);
-          return;
+  const fetchUser = async () => {
+    try {
+      const res = await fetch(
+        "https://backend-task-28rk.onrender.com/api/user",
+        {
+          method: "GET",
+          credentials: "include",
         }
+      );
 
-        const res = await fetch(
-          "https://backend-task-28rk.onrender.com/api/user",
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
+      const data = await res.json();
 
-        const data = await res.json();
-        console.log("USER RESPONSE:", res.status, data);
+      console.log("USER RESPONSE:", res.status, data);
 
-        if (res.ok && data.user) {
-          setUser(data.user);
-        } else {
-          setUser(null);
-        }
-      } catch (err) {
-        console.error("Fetch user error:", err);
+      if (res.ok) {
+        setUser(data.user);
+      } else {
         setUser(null);
-      } finally {
-        setLoading(false);
       }
-    };
+    } catch (err) {
+      console.error("FETCH ERROR:", err);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchUser();
-  }, []);
+  fetchUser();
+}, []);
 
   const handleLogout = async () => {
     try {
       await fetch("https://backend-task-28rk.onrender.com/api/logout", {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+        credentials: "include",
       });
-    } catch (err) {
-      console.error("Logout error:", err);
     } finally {
-      localStorage.removeItem("token");
       setUser(null);
       navigate("/", { replace: true });
     }
@@ -82,12 +68,9 @@ function Navbar() {
           <a href="#contact">Contact</a>
         </nav>
 
-        {!loading && user && (
+        {user && (
           <div className="avatar-wrapper" ref={menuRef}>
-            <div
-              className="avatar"
-              onClick={() => setOpen((prev) => !prev)}
-            >
+            <div className="avatar" onClick={() => setOpen(!open)}>
               {firstChar}
             </div>
 

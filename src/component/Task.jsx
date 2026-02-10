@@ -70,9 +70,11 @@ const filteredTasks = tasks.filter((task) =>
     )
 
   return (
-    <div className="task-container">
-
+   <>
     <h1 className="task_heading">Task Management Dashboard</h1>
+    <div className="task-container">
+    
+
 
       <input
   className="search-input"
@@ -123,6 +125,7 @@ const filteredTasks = tasks.filter((task) =>
         </div>
       ))}
     </div>
+   </>
   );
 }
 

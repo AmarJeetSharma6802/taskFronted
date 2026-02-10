@@ -8,6 +8,8 @@ function Navbar() {
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
+  const [nav,setNav] = useState(false)
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -75,7 +77,9 @@ function Navbar() {
           <span className="logo-text">Dev.</span>
         </div>
 
-        <nav className="nav-links">
+       {
+        nav && (
+           <nav className="nav-links">
           <a href="#hero">Home</a>
           <a href="#about">About</a>
           <a href="#stack">Stack</a>
@@ -83,6 +87,8 @@ function Navbar() {
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
+        )
+       }
 
         {!loading && user && (
           <div className="flex_bards_user_tag">
@@ -93,7 +99,7 @@ function Navbar() {
             >
               {firstChar}
             </div>
-            <div className="bars">
+            <div className="bars" onClick={()=> setNav(!nav)}>
               <i className="fa-solid fa-bars" ></i>
             </div>
           </div>

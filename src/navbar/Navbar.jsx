@@ -70,16 +70,17 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-container">
-        <div className="logo" id="home" onClick={()=> navigate("/dashboard")}>
+        <div className="logo" id="home">
           <div className="logo-box">⌘</div>
           <span className="logo-text">Dev.</span>
         </div>
 
         <nav className="nav-links">
-          <a href="#work">Work</a>
+          <a href="#hero">Home</a>
           <a href="#about">About</a>
           <a href="#stack">Stack</a>
           <a href="#task">My Tasks</a>
+          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
 

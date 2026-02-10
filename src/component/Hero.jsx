@@ -4,7 +4,7 @@ import About from "../component/About.jsx"
 function Hero() {
   return (
     <div>
-         <section className="hero">
+         <section className="hero" id='hero'>
       <div className="hero-content">
         <span className="status-pill">Amarjeet Sharma</span>
 

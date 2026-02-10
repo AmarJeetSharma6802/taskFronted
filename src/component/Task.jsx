@@ -17,7 +17,7 @@ export default function Task() {
     const res = await axios.get(`${API}/api/getTask`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    setTasks(res.data.findTask || []);
+    setTasks(res.data );
   };
 
   useEffect(() => {

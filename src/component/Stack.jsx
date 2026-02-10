@@ -1,3 +1,4 @@
+import Task from "./Task";
 import Work from "./Work";
 
 const stackData = [
@@ -44,6 +45,7 @@ export default function Stack() {
         </div>
       </div>
     </section>
+    <Task/>
     <Work/>
    </>
   );

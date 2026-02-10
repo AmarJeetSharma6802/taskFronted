@@ -19,9 +19,9 @@ function Hero() {
 
         <div className="hero-actions">
           <button className="primary-btn">
-            <a href="https://portfolio-beta-dusky-34.vercel.app/#projects">View Work</a>
+            <a href="https://portfolio-beta-dusky-34.vercel.app/#projects" style={{color:"white"}}>View Work</a>
           </button>
-          <button className="secondary-btn"><a href="https://portfolio-beta-dusky-34.vercel.app/#about">
+          <button className="secondary-btn"><a href="https://portfolio-beta-dusky-34.vercel.app/#about" style={{color:"#14b8a6"}}>
             Read About Me</a></button>
         </div>
       </div>

@@ -85,7 +85,8 @@ function Navbar() {
         </nav>
 
         {!loading && user && (
-          <div className="avatar-wrapper" ref={menuRef}>
+          <div>
+            <div className="avatar-wrapper" ref={menuRef}>
             <div
               className="avatar"
               onClick={() => setOpen((prev) => !prev)}
@@ -95,6 +96,7 @@ function Navbar() {
             <div className="bars">
               <i className="fa-solid fa-bars" ></i>
             </div>
+          </div>
 
             {open && (
               <div className="avatar-dropdown">

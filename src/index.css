@@ -484,10 +484,11 @@ width: 100%;
 height: auto;
 background-color: black;
 color: #00d6c1;
+padding: 1.5rem;
   }
   .nav-links{
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    margin-left: inherit;
   }
 }

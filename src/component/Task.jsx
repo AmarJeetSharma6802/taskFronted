@@ -17,7 +17,7 @@ export default function Task() {
     const res = await axios.get(`${API}/api/getTask`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    setTasks(res.data.findTask);
+    setTasks(res.data.findTask || []);
   };
 
   useEffect(() => {
@@ -58,10 +58,13 @@ export default function Task() {
     fetchTasks();
   };
 
-  const filteredTasks = tasks.filter((task) =>
-  task.title.toLowerCase().includes(search.toLowerCase()) ||
-  task.description.toLowerCase().includes(search.toLowerCase())
-);
+ const filteredTasks = Array.isArray(tasks)
+  ? tasks.filter((task) =>
+      task.title.toLowerCase().includes(search.toLowerCase()) ||
+      task.description.toLowerCase().includes(search.toLowerCase())
+    )
+  : [];
+
 
   return (
     <div className="task-container">

@@ -486,9 +486,13 @@ background-color: black;
 color: #00d6c1;
 padding: 1.5rem;
   }
-  .nav-links{
+ .nav-links a{
     display: flex;
     flex-direction: column;
     margin-left: inherit;
+  }
+  .flex_bards_user_tag{
+    display: flex;
+    gap: 10px;
   }
 }

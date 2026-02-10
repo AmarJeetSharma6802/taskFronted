@@ -85,7 +85,7 @@ function Navbar() {
         </nav>
 
         {!loading && user && (
-          <div>
+          <div className="flex_bards_user_tag">
             <div className="avatar-wrapper" ref={menuRef}>
             <div
               className="avatar"

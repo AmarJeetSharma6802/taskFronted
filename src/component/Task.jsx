@@ -72,6 +72,8 @@ const filteredTasks = tasks.filter((task) =>
   return (
     <div className="task-container">
 
+    <h1 className="task_heading">Task Management Dashboard</h1>
+
       <input
   className="search-input"
   placeholder="Search task..."

@@ -92,6 +92,9 @@ function Navbar() {
             >
               {firstChar}
             </div>
+            <div className="bars">
+              <i className="fa-solid fa-bars" ></i>
+            </div>
 
             {open && (
               <div className="avatar-dropdown">

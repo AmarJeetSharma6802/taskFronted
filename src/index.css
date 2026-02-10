@@ -8,8 +8,6 @@
   --border-soft: rgba(255,255,255,0.05);
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -468,9 +466,28 @@ body {
   border-color: var(--primary);
 }
 
+.bars{
+  display: none;
+}
 
-@media (max-width:450px) {
+@media (max-width:750px) {
+  .bars{
+    display: block;
+    color: #00d6c1;
+    font-size: 30px;
+  }
   .nav-links{
-display: none;
+position: absolute;
+top:80px ;
+left: 0;
+width: 100%;
+height: auto;
+background-color: black;
+color: #00d6c1;
+  }
+  .nav-links{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
   }
 }

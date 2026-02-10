@@ -78,12 +78,12 @@ function Navbar() {
         </div>
 
         <nav className={`nav-links ${nav? "active" :""}`}>
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#stack">Stack</a>
-          <a href="#task">My Tasks</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+          <a href="#hero" onClick={() => setNav(false)}>Home</a>
+          <a href="#about" onClick={() => setNav(false)}>About</a>
+          <a href="#stack" onClick={() => setNav(false)}>Stack</a>
+          <a href="#task" onClick={() => setNav(false)}>My Tasks</a>
+          <a href="#work" onClick={() => setNav(false)}>Work</a>
+          <a href="#contact" onClick={() => setNav(false)}>Contact</a>
         </nav>
 
         {!loading && user && (

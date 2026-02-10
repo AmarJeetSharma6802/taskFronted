@@ -77,9 +77,7 @@ function Navbar() {
           <span className="logo-text">Dev.</span>
         </div>
 
-       {
-        nav && (
-           <nav className="nav-links">
+        <nav className={`nav-links ${nav? "active" :""}`}>
           <a href="#hero">Home</a>
           <a href="#about">About</a>
           <a href="#stack">Stack</a>
@@ -87,8 +85,6 @@ function Navbar() {
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
-        )
-       }
 
         {!loading && user && (
           <div className="flex_bards_user_tag">

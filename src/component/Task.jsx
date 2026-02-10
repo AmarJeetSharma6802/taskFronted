@@ -9,7 +9,6 @@ export default function Task() {
   const [editId, setEditId] = useState(null);
   const [search, setSearch] = useState("");
 
-
   const token = localStorage.getItem("token");
   const API = import.meta.env.VITE_API_URL;
 
@@ -29,14 +28,14 @@ export default function Task() {
       await axios.put(
         `${API}/api/updateTaks/${editId}`,
         { title, description },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
       setEditId(null);
     } else {
       await axios.post(
         `${API}/api/createTask`,
         { title, description },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
     }
 
@@ -58,74 +57,70 @@ export default function Task() {
     fetchTasks();
   };
 
-//  const filteredTasks = Array.isArray(tasks)
-//   ? tasks.filter((task) =>
-//       task.title.toLowerCase().includes(search.toLowerCase()) ||
-//       task.description.toLowerCase().includes(search.toLowerCase())
-//     )
-//   : [];
+  //  const filteredTasks = Array.isArray(tasks)
+  //   ? tasks.filter((task) =>
+  //       task.title.toLowerCase().includes(search.toLowerCase()) ||
+  //       task.description.toLowerCase().includes(search.toLowerCase())
+  //     )
+  //   : [];
 
-const filteredTasks = tasks.filter((task) =>
-      task.title.toLowerCase().includes(search.toLowerCase())
-    )
+  const filteredTasks = tasks.filter((task) =>
+    task.title.toLowerCase().includes(search.toLowerCase()),
+  );
 
   return (
-   <>
-    <h1 className="task_heading">Task Management Dashboard</h1>
-    <div className="task-container">
-    
-
-
-      <input
-  className="search-input"
-  placeholder="Search task..."
-  value={search}
-  onChange={(e) => setSearch(e.target.value)}
-/>
-
-      <div className="input-row">
+    <>
+      <h1 className="task_heading" id="task">Task Management Dashboard</h1>
+      <div className="task-container">
         <input
-          className="task-input"
-          value={title}
-          placeholder="Title"
-          onChange={(e) => setTitle(e.target.value)}
+          className="search-input"
+          placeholder="Search task..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <input
-          className="task-input"
-          value={description}
-          placeholder="Description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
 
-      <div className="btn-wrapper">
-        <button onClick={handleSubmit} className="add-btn">
-          {editId ? "Update" : "Add"}
-        </button>
-      </div>
-
-      {filteredTasks.map((task) => (
-        <div key={task._id} className="task-card">
-          <div>
-            <h4>{task.title}</h4>
-            <p>{task.description}</p>
-          </div>
-
-          <div className="task-actions">
-            <button className="edit-btn" onClick={() => handleEdit(task)}>
-              Edit
-            </button>
-            <button
-              className="delete-btn"
-              onClick={() => handleDelete(task._id)}
-            >
-              Delete
-            </button>
-          </div>
+        <div className="input-row">
+          <input
+            className="task-input"
+            value={title}
+            placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            className="task-input"
+            value={description}
+            placeholder="Description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </div>
-      ))}
-    </div>
-   </>
+
+        <div className="btn-wrapper">
+          <button onClick={handleSubmit} className="add-btn">
+            {editId ? "Update" : "Add"}
+          </button>
+        </div>
+
+        {filteredTasks.map((task) => (
+          <div key={task._id} className="task-card">
+            <div>
+              <h4>{task.title}</h4>
+              <p>{task.description}</p>
+            </div>
+
+            <div className="task-actions">
+              <button className="edit-btn" onClick={() => handleEdit(task)}>
+                Edit
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(task._id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
-

@@ -1,11 +1,12 @@
 .task-container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     padding:40px 20px;
     color:white;
 }
 .task_heading{
     color:white;
+    padding: 2rem;
 }
 .search-input{
     width:100%;

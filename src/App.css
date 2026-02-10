@@ -69,6 +69,7 @@
     padding:8px 18px;
     border-radius:8px;
     cursor:pointer;
+    color: White;
 }
 
 .delete-btn{
@@ -77,4 +78,5 @@
     padding:8px 18px;
     border-radius:8px;
     cursor:pointer;
+    color: White;
 }

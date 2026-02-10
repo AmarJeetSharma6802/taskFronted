@@ -79,6 +79,7 @@ function Navbar() {
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#stack">Stack</a>
+          <a href="#stack">My Tasks</a>
           <a href="#contact">Contact</a>
         </nav>
 
